@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Blog\Admin;
 use Illuminate\Http\Request;
 use App\Models\BlogCategory;
 use Illuminate\Support\Str;
+use App\Http\Requests\BlogCategoryUpdateRequest;
+
 
 class CategoryController extends BaseController
 {
@@ -76,7 +78,7 @@ class CategoryController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BlogCategoryUpdateRequest $request, $id)
     {
         $item = BlogCategory::find($id);
         if (empty($item)) { //якщо ід не знайдено
